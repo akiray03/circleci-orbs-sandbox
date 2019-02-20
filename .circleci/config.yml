@@ -26,7 +26,7 @@ workflows:
                 test-config-location: src/hello-world/test.yml
 
   install_and_configure_cli:
-    executor: default
+    # executor: default
     jobs:
       - gcp-cli/install_and_initialize_cli:
           context: myContext
