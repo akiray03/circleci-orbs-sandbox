@@ -3,11 +3,15 @@ version: 2.1
 orbs:
   hello: circleci/hello-build@0.0.5
   orb-tools: circleci/orb-tools@2.0.2
+  slack: slack/slack@1.0.4
 
 workflows:
   "Hello Workflow":
     jobs:
       - hello/hello-build
+
+      - slack/approval-notification:
+          message: Pending approval
 
   test_orb:
     jobs:
