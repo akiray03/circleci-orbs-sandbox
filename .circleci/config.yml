@@ -30,5 +30,5 @@ workflows:
     jobs:
       - gcp-cli/install_and_initialize_cli:
           context: myContext
-          google-project-id: "$GOOGLE_PROJECT_ID"
-          google-compute-zone: "$GOOGLE_COMPUTE_ZONE"
+          google-project-id: GOOGLE_PROJECT_ID
+          google-compute-zone: GOOGLE_COMPUTE_ZONE
