@@ -2,8 +2,18 @@ version: 2.1
 
 orbs:
   hello: circleci/hello-build@0.0.5
+  orb-tools: circleci/orb-tools@2.0.2
 
 workflows:
   "Hello Workflow":
     jobs:
       - hello/hello-build
+
+  test_orb:
+    jobs:
+      - orb-tools/test-in-builds:
+          orb-location: src/hello-world/orb.yml
+          orb-name: hello-world
+          test-steps:
+            - orb-tools/local-test-build:
+                test-config-location: src/hello-world/test.yml
